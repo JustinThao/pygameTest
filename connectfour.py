@@ -12,6 +12,9 @@ pygame.display.set_caption('Connect 4')
 line_width = 6
 
 #define colours
+green =
+red =
+blue =
 
 def draw_grid():
     bg = (128, 128, 128)
