@@ -13,9 +13,8 @@ line_width = 6
 
 #define colours
 
-
 def draw_grid():
-    bg= (128, 128, 128)
+    bg = (128, 128, 128)
     grid = (50, 50, 50)
     screen.fill(bg)
     #six rows for x-axis
