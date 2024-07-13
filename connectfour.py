@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#update from macos
 
 import pygame
 from  pygame.locals import *
