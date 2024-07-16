@@ -26,10 +26,10 @@ def draw_grid():
     grid = (50, 50, 50)
     screen.fill(bg)
     #six rows for x-axis
-    for x in range(1,6):
+    for x in range(0, 7):
         pygame.draw.line(screen, grid, (0, x * 108), (screen_width, x * 108), line_width)
     #seven columns for y-axis
-    for x in range(1,7):
+    for x in range(0,8):
         pygame.draw.line(screen, grid, (x * 121, 0), (x * 121, screen_height), line_width)
 
 for x in range(7):
@@ -37,7 +37,7 @@ for x in range(7):
     markers.append(row)
         
 #markers for grid
-def draw_makers():
+def draw_markers():
     x_pos = 0
     for x in markers:
         y_pos = 0
@@ -45,7 +45,7 @@ def draw_makers():
             if y == 1:
                 pygame.draw.circle(screen, red, (x_pos * 100 + 2, y_pos * 100 + 2), 38, line_width)
             if y == -1:
-                pygame.draw.circle(screen, black, (x_pos * 100 + 2, y_pos * 100 + 2))
+                pygame.draw.circle(screen, black, (x_pos * 100 + 2, y_pos * 100 + 2), 38, line_width)
             y_pos += 1
         x_pos += 1
 
@@ -55,6 +55,7 @@ run = True
 while run:
 
     draw_grid()
+    draw_markers()
 
     #add event handlers
     for event in pygame.event.get():
@@ -69,8 +70,8 @@ while run:
             cell_y = pos[1]
             print(pos)
             print(markers)
-            if markers[cell_x // 108][cell_y // 121] == 0:
-                markers[cell_x // 108][cell_y // 121] = player
+            if markers[cell_x // 122][cell_y // 122] == 0:
+                markers[cell_x // 122][cell_y // 122] = player
                 player *= -1
             
 
